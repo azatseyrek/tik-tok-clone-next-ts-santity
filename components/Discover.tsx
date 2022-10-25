@@ -1,10 +1,12 @@
 import React from 'react';
+import { topics } from '../utils/constants';
 
 const Discover = () => {
   return (
-    <div>
-      Discover Page
-      <h1>Hello iTerm2</h1>
+    <div className="xl:border-b-2 xl:border-gray-300 pb-6 ">
+      <p className="text-gray-500 font-semibold m-3 mt-4 hidden xl:block">
+        Popular Topics
+      </p>
     </div>
   );
 };
