@@ -1,9 +1,18 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { topics } from '../utils/constants';
 
 const Discover = () => {
-  const activeTopicStyle = '';
+  const router = useRouter();
+  console.log(router.query);
+
+  const { topic: topicQuery } = router.query;
+
+  console.log(topicQuery);
+
+  const activeTopicStyle =
+    'xl:border-2 hover:bg-primary xl:border-[#FF1997] px-3 py-2 rounded xl:rounded-full flex items-center justify-center cursor-pointer text-[#FF1997] gap-2';
 
   const topicStyle =
     'xl:border-2 hover:bg-primary xl:border-gray-300 px-3 py-2 rounded xl:rounded-full flex items-center justify-center cursor-pointer text-black gap-2';
@@ -14,12 +23,16 @@ const Discover = () => {
         Popular Topics
       </p>
       <div className="flex gap-3 flex-wrap">
-        {topics.map((topic) => (
-          <Link key={topic.name} href={`/?topics=${topic.name}`}>
-            <div className={topicStyle}>
-              <span className="text-2xl xl:text-md ">{topic.icon}</span>
+        {topics.map((item) => (
+          <Link key={item.name} href={`/?topic=${item.name}`}>
+            <div
+              className={
+                item.name == topicQuery ? activeTopicStyle : topicStyle
+              }
+            >
+              <span className="text-2xl xl:text-md ">{item.icon}</span>
               <span className="font-md text-md hidden xl:block capitalize">
-                {topic.name}
+                {item.name}
               </span>
             </div>
           </Link>
