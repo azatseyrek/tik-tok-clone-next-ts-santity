@@ -5,11 +5,8 @@ import { topics } from '../utils/constants';
 
 const Discover = () => {
   const router = useRouter();
-  console.log(router.query);
 
   const { topic: topicQuery } = router.query;
-
-  console.log(topicQuery);
 
   const activeTopicStyle =
     'xl:border-2 hover:bg-primary xl:border-[#FF1997] px-3 py-2 rounded xl:rounded-full flex items-center justify-center cursor-pointer text-[#FF1997] gap-2';

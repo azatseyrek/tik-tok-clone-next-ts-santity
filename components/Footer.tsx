@@ -1,3 +1,4 @@
+import {NextPage} from 'next';
 import React from 'react';
 import { footerList1, footerList2, footerList3 } from '../utils/constants';
 
@@ -6,8 +7,10 @@ interface listProps {
   mt: boolean;
 }
 
+
+
 const Footer = () => {
-  const List: React.FC<listProps> = ({ items, mt }) => {
+  const List: NextPage<listProps> = ({ items, mt }) => {
     return (
       <div className={`flex flex-wrap gap-2  ${mt && 'mt-5'}`}>
         {items.map((item) => (
