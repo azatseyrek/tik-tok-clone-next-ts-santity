@@ -15,6 +15,7 @@ const Sidebar: NextPage = () => {
 
   const normalLink =
     'flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold text-[#f51997] rounded';
+
   return (
     <div className="h-full ">
       <div

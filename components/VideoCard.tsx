@@ -31,6 +31,16 @@ const VideoCard: NextPage<IProps> = (props) => {
     }
   };
 
+  // const onVolumePress = () => {
+  //   if (isVideoMuted) {
+  //     videoRef?.current?.muted = false;
+  //     setIsVideoMuted(false);
+  //   } else {
+  //     videoRef?.current?.muted = true;
+  //     setIsVideoMuted(true);
+  //   }
+  // };
+
   return (
     <div className="flex flex-col border-b-2 border-gray-200 pb-6">
       <div>
@@ -81,27 +91,28 @@ const VideoCard: NextPage<IProps> = (props) => {
               loop
               src={post.video.asset.url}
               onClick={onVideoPress}
+              muted={isVideoMuted}
             />
           </Link>
-          {isHover && (
-            <div className="flex justify-between">
+          {!isHover && (
+            <div className="absolute bottom-6  cursor-pointer left-12 md:left-14 lg:left-2 flex gap-10 lg:justify-between w-[100px] p-3 md:w-[50px]">
               {isPlaying ? (
                 <button onClick={onVideoPress}>
-                  <BsFillPauseFill className="text-black text-2xl lg:text-4xl" />
+                  <BsFillPauseFill className="text-primary text-2xl lg:text-4xl" />
                 </button>
               ) : (
                 <button onClick={onVideoPress}>
-                  <BsFillPlayFill className="text-black text-2xl lg:text-4xl" />
+                  <BsFillPlayFill className="text-primary text-2xl lg:text-4xl" />
                 </button>
               )}
               {!isVideoMuted ? (
                 <button onClick={() => setIsVideoMuted(true)}>
                   {' '}
-                  <HiVolumeUp className="text-black text-2xl lg:text-4xl" />
+                  <HiVolumeUp className="text-primary text-2xl lg:text-4xl" />
                 </button>
               ) : (
                 <button onClick={() => setIsVideoMuted(false)}>
-                  <HiVolumeOff className="text-black text-2xl lg:text-4xl" />
+                  <HiVolumeOff className="text-primary text-2xl lg:text-4xl" />
                 </button>
               )}
             </div>
