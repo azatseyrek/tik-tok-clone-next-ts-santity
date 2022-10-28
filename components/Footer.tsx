@@ -1,4 +1,4 @@
-import {NextPage} from 'next';
+import { NextPage } from 'next';
 import React from 'react';
 import { footerList1, footerList2, footerList3 } from '../utils/constants';
 
@@ -6,8 +6,6 @@ interface listProps {
   items: string[];
   mt: boolean;
 }
-
-
 
 const Footer = () => {
   const List: NextPage<listProps> = ({ items, mt }) => {

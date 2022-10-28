@@ -81,7 +81,6 @@ const VideoCard: NextPage<IProps> = (props) => {
               loop
               src={post.video.asset.url}
               onClick={onVideoPress}
-        
             />
           </Link>
           {isHover && (
